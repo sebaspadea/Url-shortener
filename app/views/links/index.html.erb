@@ -10,11 +10,21 @@
 
 <div class="container mt-3" id="lista">
   <% @links.each do |link| %>
-    <div class="border border-dark rounded mt-3">
+    <div class="border border-light rounded mt-3">
       <ul class="list-group">
-        <li class="list-group-item"><%= "​localhost:3000/links/#{link.short_url}" %></li>
-        <li class="list-group-item">URL Original: <%= link.url %></li>
-        <li class="list-group-item">Accedido <%= link.clicked %> veces</li>
+        <div class="d-flex">
+          <div class="w-100">
+            <li class="list-group-item"><%= "​localhost:3000/links/#{link.short_url}" %></li>
+            <li class="list-group-item">Accedido <%= link.clicked %> veces</li>
+          </div>
+          <div class="">
+            <i class="far fa-copy"></i>
+            <i class="fas fa-trash"></i>
+          </div>
+        </div>
+        <div>
+          <li class="list-group-item">URL Original: <%= link.url %></li>
+        </div>
       </ul>
     </div>
   <% end %>
