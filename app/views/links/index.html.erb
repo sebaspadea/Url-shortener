@@ -1,0 +1,8 @@
+<div class="alert alert-danger" role="alert">
+  <%= flash[:error] %>
+</div>
+
+<%= form_for @link do |f| %>
+  <%= f.text_field :url %>
+  <%= f.submit "Acortar" %>
+<% end %>
