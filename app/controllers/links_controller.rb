@@ -4,15 +4,21 @@ class LinksController < ApplicationController
     @link = Link.new
   end
 
-  def new
-    @link = Link.new
-  end
-
   def create
     @link = Link.new(link_params)
     @link.short_url = @link.generate_short_url
-    flash[:error] = @link.errors.full_messages unless @link.save
-    redirect_to root_path
+    if @link.save
+      redirect_to root_path
+    else
+      flash[:warning] = "No se pudo crear la url!"
+      redirect_to root_path
+    end
+  end
+
+  def show
+    @link = Link.find_by(short_url: params[:short_url])
+    @link.clicked += 1
+    redirect_to @link.url
   end
 
   private

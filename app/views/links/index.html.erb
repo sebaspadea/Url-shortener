@@ -1,8 +1,21 @@
-<div class="alert alert-danger" role="alert">
-  <%= flash[:error] %>
+<div class="p-5" id="nav">
 </div>
 
-<%= form_for @link do |f| %>
-  <%= f.text_field :url %>
-  <%= f.submit "Acortar" %>
-<% end %>
+<div class="container mt-3" id="form-acortar">
+  <%= simple_form_for @link do |f| %>
+    <%= f.text_field :url %>
+    <%= f.submit "Acortar", class: "btn btn-warning" %>
+  <% end %>
+</div>
+
+<div class="container mt-3" id="lista">
+  <% @links.each do |link| %>
+    <div class="border border-dark rounded mt-3">
+      <ul class="list-group">
+        <li class="list-group-item"><%= "​localhost:3000/links/#{link.short_url}" %></li>
+        <li class="list-group-item">URL Original: <%= link.url %></li>
+        <li class="list-group-item">Accedido <%= link.clicked %> veces</li>
+      </ul>
+    </div>
+  <% end %>
+</div>
