@@ -1,10 +1,41 @@
 // Place all the styles related to the Links controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
-.nav {
+#nav {
   background-color: #475983;
 }
 
-.form-acortar{
+#form-acortar{
   background-color: #DADFEF;
+  height: 350px;
+}
+
+ul {
+  li {
+    list-style: none;
+  }
+}
+
+i {
+  font-size: large;
+}
+
+#url-original {
+  background-color: #E4E8F1;
+  border-top: 2px solid lightgray;
+}
+
+.button {
+  background-color: #E41685;
+  color: white;
+}
+
+.button:hover {
+  background-color: white;
+  color: #E41685;
+}
+
+.fa-trash {
+  text-decoration: none;
+  color: black;
 }

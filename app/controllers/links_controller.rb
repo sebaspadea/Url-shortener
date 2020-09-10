@@ -15,6 +15,12 @@ class LinksController < ApplicationController
     end
   end
 
+  def destroy
+    @link = Link.find(params[:id])
+    @link.destroy
+    redirect_to root_path
+  end
+
   def show
     @link = Link.find_by(short_url: params[:short_url])
     @link.clicked += 1
