@@ -1,6 +1,8 @@
+<!-- Nav -->
 <div class="p-4" id="nav">
 </div>
 
+<!-- Container with input -->
 <div class="row p-3 d-flex justify-content-around" id="form-acortar">
   <div class="col-md-6 align-self-center">
     <%= simple_form_for @link do |f| %>
@@ -10,6 +12,7 @@
   </div>
 </div>
 
+<!-- Container with list of links -->
 <div class="container" id="lista">
   <div class="row my-3">
     <div class="col-md-6 m-auto">
@@ -18,11 +21,12 @@
           <div>
             <div class="d-flex justify-content-between align-items-center p-2">
               <div>
-                <p><%= "​http://localhost:3000/links/#{link.short_url}" %></p>
+                <p id="text-copy"><%= "​https://localhost:3000/links/#{link.short_url}" %></p>
                 <p class="text-muted">Accedido <%= link.clicked %> veces</p>
               </div>
               <div>
                 <i class="far fa-copy"></i>
+                <textarea id=copy name="hide" style="display:none;"></textarea>
                 <%= link_to link_path(link), method: :delete, data: { confirm: "Are you sure?"} do %>
                   <i class="fas fa-trash"></i>
                 <% end %>

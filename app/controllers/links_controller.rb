@@ -10,12 +10,13 @@ class LinksController < ApplicationController
     if @link.save
       redirect_to root_path
     else
-      flash[:warning] = "No se pudo crear la url!"
+      flash[:danger] = "No se pudo crear la url!"
       redirect_to root_path
     end
   end
 
   def destroy
+    #Encuentro el link a eliminar
     @link = Link.find(params[:id])
     @link.destroy
     redirect_to root_path
