@@ -14,10 +14,6 @@
   <body>
     <div>
       <%= yield %>
-      <% flash.each do |type, msg| %> 
-        <div class="alert alert-danger alert-dismissible alert-fade alert-fadein"> <%= msg %> </div> 
-      <% end %>
     </div>
-
   </body>
 </html>

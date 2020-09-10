@@ -9,6 +9,12 @@
       <%= f.text_field :url %>
       <%= f.submit "Acortar", class: "button btn p-2 px-3" %>
     <% end %>
+    <br>
+    <div>
+      <% flash.each do |type, msg| %> 
+        <div class="alert alert-danger alert-dismissible alert-fade alert-fadein"> <%= msg %> </div> 
+      <% end %>
+    </div>
   </div>
 </div>
 
