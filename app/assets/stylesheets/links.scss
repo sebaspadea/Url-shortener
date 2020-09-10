@@ -33,10 +33,29 @@ i {
 .button:hover {
   background-color: white;
   color: #E41685;
+  border: 1px solid #E41685;
 }
 
 .fa-trash {
   text-decoration: none;
   color: black;
+}
+
+.alert {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  z-index: 1000;
+}
+
+.alert-fadein {
+  opacity: 0;
+  -webkit-transition: opacity 0.15s linear;
+  -moz-transition: opacity 0.15s linear;
+  -o-transition: opacity 0.15s linear;
+  transition: opacity 0.15s linear;
+}
+.alert-fade{
+  opacity: 1;
 }
 

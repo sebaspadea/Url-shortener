@@ -3,25 +3,23 @@
 </div>
 
 <!-- Container with input -->
-<div class="row p-3 d-flex justify-content-around" id="form-acortar">
-  <div class="col-md-6 align-self-center">
+<div class="container-fluid d-flex justify-content-center" id="form-acortar">
+  <div class="col-md-4 align-self-center">
     <%= simple_form_for @link do |f| %>
-      <%= f.text_field :url %>
-      <%= f.submit "Acortar", class: "button btn p-2 px-3" %>
-    <% end %>
-    <br>
-    <div>
-      <% flash.each do |type, msg| %> 
-        <div class="alert alert-danger alert-dismissible alert-fade alert-fadein"> <%= msg %> </div> 
-      <% end %>
-    </div>
+      <div class="input-group mb-3">
+        <%= f.text_field :url, class:"form-control p-4" %>
+        <div class="input-group-append">
+          <%= f.submit "Acortar", class: "button btn px-3", id:"button-addon2" %>
+        </div>
+      </div>
+    <% end %>  
   </div>
 </div>
 
 <!-- Container with list of links -->
-<div class="container" id="lista">
+<div class="container-fluid" id="lista">
   <div class="row my-3">
-    <div class="col-md-6 m-auto">
+    <div class="col-md-4 m-auto">
       <% @links.each do |link| %>
         <div class="border border-muted rounded mt-3">
           <div>
@@ -38,8 +36,8 @@
                 <% end %>
               </div>
             </div>
-            <div id="url-original"  class="p-2 d-flex align-items-center">
-              <p class="font-weight-bold">URL Original: <%= link.url %></p>
+            <div id="url-original" class="p-2 d-flex align-items-center">
+              <p class="font-weight-bold text-truncate">URL Original: <%= link.url %></p>
             </div>
           </div>
         </div>
