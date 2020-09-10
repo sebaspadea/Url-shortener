@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get '/links/:short_url', to: 'links#show', as: :show_short_url
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
-      resources :links, only: [ :index, :show ]
+      resources :links, only: [ :index, :show, :create, :destroy ]
     end
   end
 end
