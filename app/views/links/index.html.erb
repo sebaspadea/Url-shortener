@@ -25,11 +25,11 @@
           <div>
             <div class="d-flex justify-content-between align-items-center p-2" data-controller="clicked">
               <div>
-                <p id="text-copy" data-target="clicked.url"><%= "​localhost:3000/links/#{link.short_url}" %></p>
-                <p class="text-muted" data-target="clicked.count">Accedido <%= link.clicked %> veces</p>
+                <p data-target="clicked.url"><%= "​localhost:3000/links/#{link.short_url}" %></p>
+                <p class="text-muted">Accedido <%= link.clicked %> veces</p>
               </div>
               <div>
-                <button class="btn btn-link" id="copy" data-action="click->clicked#increment"><i class="far fa-copy"></i></button>
+                <button class="btn btn-link" data-action="click->clicked#copy"><i class="far fa-copy"></i></button>
                 <%= link_to link_path(link), method: :delete, data: { confirm: "Are you sure?"} do %>
                   <i class="fas fa-trash"></i>
                 <% end %>
