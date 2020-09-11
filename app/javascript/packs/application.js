@@ -17,9 +17,12 @@ require("channels")
 // External imports
 import "bootstrap";
 import $ from "jquery";
+import { copyText } from "./copy_text"
 
 document.addEventListener('turbolinks:load', () => {
-  console.log("hola")
   $(".alert").fadeOut(4000);
+  copyText();
 });
 
+
+import "controllers"

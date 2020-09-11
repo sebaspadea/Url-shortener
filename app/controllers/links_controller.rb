@@ -1,6 +1,10 @@
 class LinksController < ApplicationController
   def index
     @links = Link.all
+    respond_to do |format|
+      format.html
+      format.json { render json: { links: @links } }
+    end
     @link = Link.new
   end
 
@@ -25,6 +29,7 @@ class LinksController < ApplicationController
   def show
     @link = Link.find_by(short_url: params[:short_url])
     @link.clicked += 1
+    @link.save
     redirect_to @link.url
   end
 
